@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/02/new-article/</loc>
+    <lastmod>2016-09-03T16:53:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>1我们来测试评论页面test123</title>
+        <pubTime>2016-09-02T08:54:20.000Z</pubTime>
+        
+        <tag>测试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/04/hello-world/</loc>
+    <lastmod>2016-08-31T23:41:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Text123测试下看看...</title>
+        <pubTime>2016-09-03T18:55:41.207Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
