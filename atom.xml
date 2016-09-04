@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://jackchensky.github.io/"/>
   <updated>2016-08-31T23:41:55.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://jackchensky.github.io/</id>
   
   <author>
     <name>Jackchen</name>
@@ -17,9 +17,9 @@
   
   <entry>
     <title>Text123测试下看看...</title>
-    <link href="http://yoursite.com/2016/09/04/hello-world/"/>
-    <id>http://yoursite.com/2016/09/04/hello-world/</id>
-    <published>2016-09-03T19:31:44.901Z</published>
+    <link href="https://jackchensky.github.io/2016/09/04/hello-world/"/>
+    <id>https://jackchensky.github.io/2016/09/04/hello-world/</id>
+    <published>2016-09-03T19:59:06.134Z</published>
     <updated>2016-08-31T23:41:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -44,8 +44,8 @@
   
   <entry>
     <title>1我们来测试评论页面test123</title>
-    <link href="http://yoursite.com/2016/09/02/new-article/"/>
-    <id>http://yoursite.com/2016/09/02/new-article/</id>
+    <link href="https://jackchensky.github.io/2016/09/02/new-article/"/>
+    <id>https://jackchensky.github.io/2016/09/02/new-article/</id>
     <published>2016-09-02T08:54:20.000Z</published>
     <updated>2016-09-03T16:53:56.000Z</updated>
     
@@ -70,7 +70,7 @@
     </summary>
     
     
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="https://jackchensky.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
