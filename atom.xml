@@ -84,14 +84,14 @@
     <link href="https://jackchensky.github.io/2016/09/12/write-before/"/>
     <id>https://jackchensky.github.io/2016/09/12/write-before/</id>
     <published>2016-09-12T07:19:01.000Z</published>
-    <updated>2016-09-13T07:08:59.000Z</updated>
+    <updated>2016-09-16T17:37:24.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://oddt31b82.bkt.clouddn.com/pic-01.jpg" alt="写在开始之前"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>三十来岁的人生想想过的也快。这些年，经历了不算大的起起伏伏，不敢说沧海人生，但起码也走过了一段人生旅程。于是想做些记录，也算是个总结和学习的过程。</p>
 </blockquote>
 <h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>从上大学的时候就开始习惯写博客，当时用的是Alex哥哥自己改编的博客平台，之后从2006年开始转到wordpress平台。<a href="http://www.jackchen.cn/blog" target="_blank" rel="external"><em>设计创意1984</em></a>    就这样一直写了十多年。很长一段时间更新博客占据了我大多数的业余时间，但是我乐在其中！博客站的内容分类也相当之多，但因为自己平面和网页设计师的职位原因，素材文章占了大多数。只是为了方便自己和同职位的设计师们。在做设计一些年头后我一直想把一些优秀的素材单独Share给大家，更简单更轻盈的素材下载模式。于是我建了<a href="http://www.qingsucai.com" target="_blank" rel="external"><em>轻素材</em></a>    网站。<br><a id="more"></a></p>
-<p>在安静了一段时间后，我决定要好好的学一门后端编程语言。因为我感觉编程在未来会是大多数人都需要掌握的一门技能，它在改变当下这个世界的同事也让未来充满不可预知。当然编程对我来说其实并不陌生。因为有过一段时间的前端设计师的职位经历，所以HTML+DIV+CSS这些还是可以应付的。包括一些简单的JS代码和Bootstrap框架都有一些了解。但是压力还是有的。看了很多文章，知道后端语言的学习其实不仅仅是学习一门语言，在学习的整个过程中，你还要了解很多，比如Git、服务器、数据库等等。但是我相信，<code>只要你真心想做一件事，全世界都会来帮你的！最怕的是你自己的提前放弃。难道不是吗？</code></p>
+<p>在安静了一段时间后，我决定要好好的学一门后端编程语言。因为我感觉编程在未来会是大多数人都需要掌握的一门技能，它在改变当下这个世界的同时也让未来充满不可预知。当然编程对我来说其实并不陌生。因为有过一段时间的前端设计师的职位经历，所以HTML+DIV+CSS这些还是可以应付的。包括一些简单的JS代码和Bootstrap框架都有一些了解。但是压力还是有的。看了很多文章，知道后端语言的学习其实不仅仅是学习一门语言，在学习的整个过程中，你还要了解很多，比如Git、服务器、数据库等等。但是我相信，<code>只要你真心想做一件事，全世界都会来帮你的！最怕的是你自己的提前放弃。难道不是吗？</code></p>
 <h3 id="准备记录和分享"><a href="#准备记录和分享" class="headerlink" title="准备记录和分享"></a>准备记录和分享</h3><p>学习和健身一样需要的是一种持久的坚持，如果你能把学习健身融入到生活中，变成一种顺其自然的生活方式。那才是正真的大神。但是现实总是需要种种妥协的。你需要不断的平衡生活和学习！还有就是要有极高的自制力，好的程序员甚至黑客都是有着偏执的强迫症，对自己的生活学习都有着非常细密的管理。在最最开始，我决定做一个关于学习过程的记录站，最后就决定挂在GitHub上了。毕竟这里是全球最牛X程序员关注的地方。用了非常简约的HEXO博客系统，非常棒。</p>
 <h3 id="状态和效率"><a href="#状态和效率" class="headerlink" title="状态和效率"></a>状态和效率</h3><p>我们都听过“人生来平等”这样的言论。其实不然！每个人出身后先天就注定了很多事情，智商的高低，是否有疾病等等。所以对于学习有的人是天生会排斥，而有的人却恰恰相反。就好像不同的发动机一样，如果把自己的状态和效率调整到一个最佳状态其实非常重要！好比我自己，一直渴望学习，但是一旦周遭环境不在理想中的那个状态就会拖延症发作！这个非常的不好。因为环境是相对的，会不停的变化，你在漫长的岁月里很难去平衡周遭的环境。很多要坚持学英语的人应该有过这种感觉。开始学习了一段时间，背了几页单词，然后间隔了一段时间。回去再学又要重头开始，这样的死循环就是很不好的。所以如何高效且保持状态是很重要的！而且要自己去发现，因为每个人都有差异。</p>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>或许看到这里你根本没感到自己学到了什么，因为我没有总结出一套有依据的科学学习方法。但是我这样用笨方法记录下来，让自己有回溯反思的时候，我觉得这个就很值得！</p>
@@ -111,71 +111,6 @@
     
     
       <category term="学习" scheme="https://jackchensky.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1我们来测试评论页面test123</title>
-    <link href="https://jackchensky.github.io/2016/09/02/new-article/"/>
-    <id>https://jackchensky.github.io/2016/09/02/new-article/</id>
-    <published>2016-09-02T08:54:20.000Z</published>
-    <updated>2016-09-09T07:58:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/path.png" alt="前端学习导图"></p>
-<p>#测试一下</p>
-<p>######看看好不好用</p>
-<p>我喜欢的明星是</p>
-<blockquote>
-<p>周杰伦</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/path.png&quot; alt=&quot;前端学习导图&quot;&gt;&lt;/p&gt;
-&lt;p&gt;#测试一下&lt;/p&gt;
-&lt;p&gt;######看看好不好用&lt;/p&gt;
-&lt;p&gt;我喜欢的明星是&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;周杰伦&lt;/p&gt;
-&lt;/blockquote&gt;
-
-    
-    </summary>
-    
-      <category term="测试" scheme="https://jackchensky.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="测试" scheme="https://jackchensky.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Text123测试下看看...</title>
-    <link href="https://jackchensky.github.io/2016/09/01/hello-world/"/>
-    <id>https://jackchensky.github.io/2016/09/01/hello-world/</id>
-    <published>2016-09-01T08:54:20.000Z</published>
-    <updated>2016-09-12T07:34:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-      <category term="测试" scheme="https://jackchensky.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-    
     
   </entry>
   

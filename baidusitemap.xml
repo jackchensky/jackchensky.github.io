@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>https://jackchensky.github.io/2016/09/12/build-hexo-on-github/</loc>
-    <lastmod>2016-09-13T07:09:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>在GitHub上架设Hexo静态站</title>
-        <pubTime>2016-09-12T15:11:14.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="https://jackchensky.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://jackchensky.github.io/2016/09/12/write-before/</loc>
-    <lastmod>2016-09-13T07:08:59.000Z</lastmod>
+    <lastmod>2016-09-16T17:37:24.000Z</lastmod>
     <data>
         <display>
         <title>写在开始之前</title>
@@ -44,37 +24,19 @@
 
     
   <url>
-    <loc>https://jackchensky.github.io/2016/09/01/hello-world/</loc>
-    <lastmod>2016-09-12T07:34:03.000Z</lastmod>
+    <loc>https://jackchensky.github.io/2016/09/12/build-hexo-on-github/</loc>
+    <lastmod>2016-09-13T07:09:08.000Z</lastmod>
     <data>
         <display>
-        <title>Text123测试下看看...</title>
-        <pubTime>2016-09-01T08:54:20.000Z</pubTime>
+        <title>在GitHub上架设Hexo静态站</title>
+        <pubTime>2016-09-12T15:11:14.000Z</pubTime>
         
-         
-           
-             
-              <breadCrumb title="测试" url="https://jackchensky.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://jackchensky.github.io/2016/09/02/new-article/</loc>
-    <lastmod>2016-09-09T07:58:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>1我们来测试评论页面test123</title>
-        <pubTime>2016-09-02T08:54:20.000Z</pubTime>
-        
-        <tag>测试</tag>
+        <tag>Hexo</tag>
          
          
            
              
-              <breadCrumb title="测试" url="https://jackchensky.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+              <breadCrumb title="Hexo" url="https://jackchensky.github.io/categories/Hexo/"/>
           
         </display>
     </data>
