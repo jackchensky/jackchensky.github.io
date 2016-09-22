@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jackchensky.github.io/"/>
-  <updated>2016-09-22T09:56:50.000Z</updated>
+  <updated>2016-09-22T23:23:47.000Z</updated>
   <id>https://jackchensky.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="https://jackchensky.github.io/2016/09/22/hexo-error/"/>
     <id>https://jackchensky.github.io/2016/09/22/hexo-error/</id>
     <published>2016-09-22T09:07:25.000Z</published>
-    <updated>2016-09-22T09:56:50.000Z</updated>
+    <updated>2016-09-22T23:23:47.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://oddt31b82.bkt.clouddn.com/hexo-error-01.jpg" alt="Hexo本地生成后的错误"></p>
 <h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1.问题"></a>1.问题</h2><p>在本地架设好Hexo后一切调试的都挺顺利的，唯一的问题就是每次在执行 <code>hexo -d</code> 等命令的时候总是会出现如下的一堆错误提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div></pre></td></tr></table></figure></p>
 <p>百度谷歌了几次都没能找到好的解决方案，包括 Hexo 官方对于这个错误的解决方法 执行→  <code>$ npm install hexo --no-optional</code> 也木有用！<br><a id="more"></a></p>
 <h2 id="2-发现"><a href="#2-发现" class="headerlink" title="2.发现"></a>2.发现</h2><p>今天无意中发现了一个比较笨的解决方法。用一段代码彻底将 <code>Node</code> 删除干净了！然后重装一下就OK了哦！👌<br>棒棒哒，Let’s do it!</p>
 <h2 id="3-解决"><a href="#3-解决" class="headerlink" title="3.解决"></a>3.解决</h2><p>创建一个 <code>shell</code> 文件，在终端或者 iTerm 中输入如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano  uninstall_node.sh</div></pre></td></tr></table></figure></p>
-<p>保存后输入下面一段代码后保存退出→<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">lsbom -f -l -s -pf /var/db/receipts/org.nodejs.pkg.bom \</div><div class="line">| while read i; do</div><div class="line">sudo rm /usr/local/$&#123;i&#125;</div><div class="line">done</div><div class="line">sudo rm -rf /usr/local/lib/node \</div><div class="line">/usr/local/lib/node_modules \</div><div class="line">/var/db/receipts/org.nodejs.*</div></pre></td></tr></table></figure></p>
+<p>然后输入下面一段代码后保存退出→<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">lsbom -f -l -s -pf /var/db/receipts/org.nodejs.pkg.bom \</div><div class="line">| while read i; do</div><div class="line">sudo rm /usr/local/$&#123;i&#125;</div><div class="line">done</div><div class="line">sudo rm -rf /usr/local/lib/node \</div><div class="line">/usr/local/lib/node_modules \</div><div class="line">/var/db/receipts/org.nodejs.*</div></pre></td></tr></table></figure></p>
 <p>然后给文件赋权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod  777  uninstall_node.sh</div></pre></td></tr></table></figure></p>
 <p>最后运行脚本,彻底清除node.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh  uninstall_node.sh</div></pre></td></tr></table></figure></p>
 <p>现在可以重新安装node.js啦！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure></p>
