@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jackchensky.github.io/"/>
-  <updated>2016-09-13T07:09:08.000Z</updated>
+  <updated>2016-09-22T09:52:42.000Z</updated>
   <id>https://jackchensky.github.io/</id>
   
   <author>
@@ -16,11 +16,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决Hexo本地生成后出现的错误问题</title>
+    <link href="https://jackchensky.github.io/2016/09/22/hexo-error/"/>
+    <id>https://jackchensky.github.io/2016/09/22/hexo-error/</id>
+    <published>2016-09-22T09:07:25.000Z</published>
+    <updated>2016-09-22T09:52:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://oddt31b82.bkt.clouddn.com/hexo-error-01.jpg" alt="Hexo本地生成后的错误"></p>
+<h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1.问题"></a>1.问题</h2><p>在本地架设好Hexo后一切调试的都挺顺利的，唯一的问题就是每次在执行 <code>hexo -d</code> 等命令的时候总是会出现如下的一堆错误提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div></pre></td></tr></table></figure></p>
+<p>百度谷歌了几次都没能找到好的解决方案，包括 Hexo 官方对于这个错误的解决方法 执行→  <code>$ npm install hexo --no-optional</code> 也木有用！<br><a id="more"></a></p>
+<h2 id="2-发现"><a href="#2-发现" class="headerlink" title="2.发现"></a>2.发现</h2><p>今天无意中发现了一个比较笨的解决方法。用一段代码彻底将 <code>Node</code> 删除干净了！然后重装一下就OK了哦！👌<br>棒棒哒，Let’s do it!</p>
+<h2 id="3-解决"><a href="#3-解决" class="headerlink" title="3.解决"></a>3.解决</h2><p>创建一个 <code>shell</code> 文件，在终端或者 iTerm 中输入如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nano  uninstall_node.sh</div></pre></td></tr></table></figure></p>
+<p>保存后退出→</p>
+<p>然后给文件赋权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod  777  uninstall_node.sh</div></pre></td></tr></table></figure></p>
+<p>最后运行脚本,彻底清除node.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh  uninstall_node.sh</div></pre></td></tr></table></figure></p>
+<p>现在可以重新安装node.js啦！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure></p>
+<p>最后还要安装一下Hexo,执行如下命令就好，其他配置不需要改变！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h2><p>不管做什么事情问题总是会有的，解决不了不要早早放弃，也不要抓着不放，学会换个方法，换个思路和角度，或许问题就能瞬间消失哦 ！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://oddt31b82.bkt.clouddn.com/hexo-error-01.jpg&quot; alt=&quot;Hexo本地生成后的错误&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1.问题&quot;&gt;&lt;/a&gt;1.问题&lt;/h2&gt;&lt;p&gt;在本地架设好Hexo后一切调试的都挺顺利的，唯一的问题就是每次在执行 &lt;code&gt;hexo -d&lt;/code&gt; 等命令的时候总是会出现如下的一堆错误提示&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Release/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/default/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Debug/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Release/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/default/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot find module &amp;apos;./build/Debug/DTraceProviderBindings&amp;apos;] code: &amp;apos;MODULE_NOT_FOUND&amp;apos; &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;百度谷歌了几次都没能找到好的解决方案，包括 Hexo 官方对于这个错误的解决方法 执行→  &lt;code&gt;$ npm install hexo --no-optional&lt;/code&gt; 也木有用！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://jackchensky.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://jackchensky.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在GitHub上架设Hexo静态站</title>
     <link href="https://jackchensky.github.io/2016/09/12/build-hexo-on-github/"/>
     <id>https://jackchensky.github.io/2016/09/12/build-hexo-on-github/</id>
     <published>2016-09-12T15:11:14.000Z</published>
-    <updated>2016-09-13T07:09:08.000Z</updated>
+    <updated>2016-09-22T09:11:20.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://oddt31b82.bkt.clouddn.com/pic-02.jpg" alt="GitHub上架设Hexo"></p>
 <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>我想重新架设一个站来记录学习中遇到的事件，以便自己以后的回溯和总结。于是就有了这篇文章:D</p>

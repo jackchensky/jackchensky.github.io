@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://jackchensky.github.io/2016/09/12/write-before/</loc>
+    <loc>https://jackchensky.github.io/2016/09/22/hexo-error/</loc>
     
-    <lastmod>2016-09-16T17:52:28.000Z</lastmod>
+    <lastmod>2016-09-22T09:52:42.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://jackchensky.github.io/2016/09/12/build-hexo-on-github/</loc>
     
-    <lastmod>2016-09-13T07:09:08.000Z</lastmod>
+    <lastmod>2016-09-22T09:11:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jackchensky.github.io/2016/09/12/write-before/</loc>
+    
+    <lastmod>2016-09-16T17:52:28.000Z</lastmod>
     
   </url>
   
