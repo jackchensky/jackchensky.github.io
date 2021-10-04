@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jackchen Notebook" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="1.前言我想重新架设一个站来记录学习中遇到的事件，以便自己以后的回溯和总结。于是就有了这篇文章:D 2.准备首先你得要有一个GitHub账号。直接去官网注册一下就好。整个网站架设好了就和我的这个站：jackchensky.github.io，感觉是一样的。你可以自己先打开来瞅一眼！是不是感觉自己像个coding高手一样。 在下面的架设过程中你需要对下面几个工具熟悉起来。因为以后会一直使用   命">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在GitHub上架设Hexo静态站">
+<meta property="og:url" content="https://jackchensky.github.io/2016/09/12/build-hexo-on-github/index.html">
+<meta property="og:site_name" content="Jackchen Notebook">
+<meta property="og:description" content="1.前言我想重新架设一个站来记录学习中遇到的事件，以便自己以后的回溯和总结。于是就有了这篇文章:D 2.准备首先你得要有一个GitHub账号。直接去官网注册一下就好。整个网站架设好了就和我的这个站：jackchensky.github.io，感觉是一样的。你可以自己先打开来瞅一眼！是不是感觉自己像个coding高手一样。 在下面的架设过程中你需要对下面几个工具熟悉起来。因为以后会一直使用   命">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.jackchen.cn/pic-02.jpg">
+<meta property="og:updated_time" content="2021-10-03T07:50:35.082Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在GitHub上架设Hexo静态站">
+<meta name="twitter:description" content="1.前言我想重新架设一个站来记录学习中遇到的事件，以便自己以后的回溯和总结。于是就有了这篇文章:D 2.准备首先你得要有一个GitHub账号。直接去官网注册一下就好。整个网站架设好了就和我的这个站：jackchensky.github.io，感觉是一样的。你可以自己先打开来瞅一眼！是不是感觉自己像个coding高手一样。 在下面的架设过程中你需要对下面几个工具熟悉起来。因为以后会一直使用   命">
+<meta name="twitter:image" content="http://img.jackchen.cn/pic-02.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jackchensky.github.io/2016/09/12/build-hexo-on-github/">
+
+
+
+
+
+  <title>在GitHub上架设Hexo静态站 | Jackchen Notebook</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jackchen Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="http://jackchen.cn/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br>
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jackchensky.github.io/2016/09/12/build-hexo-on-github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jackchen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackchen Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在GitHub上架设Hexo静态站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-12T23:11:14+08:00">
+                2016-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.jackchen.cn/pic-02.jpg" alt="GitHub上架设Hexo"></p>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>我想重新架设一个站来记录学习中遇到的事件，以便自己以后的回溯和总结。于是就有了这篇文章:D</p>
+<h2 id="2-准备"><a href="#2-准备" class="headerlink" title="2.准备"></a>2.准备</h2><p>首先你得要有一个<a href="http://www.github.com" target="_blank" rel="noopener">GitHub</a>账号。直接去官网注册一下就好。整个网站架设好了就和我的这个站：<a href="http://jackchensky.github.io">jackchensky.github.io</a>，感觉是一样的。你可以自己先打开来瞅一眼！是不是感觉自己像个coding高手一样。</p>
+<p>在下面的架设过程中你需要对下面几个工具熟悉起来。因为以后会一直使用</p>
+<blockquote>
+<ul>
+<li>命令行工具的使用</li>
+<li>Atom的使用</li>
+<li>如何写出优雅的Markdown文档</li>
+</ul>
+</blockquote>
+<p>OK，Let’s do it!<br><a id="more"></a></p>
+<h2 id="3-前期架设"><a href="#3-前期架设" class="headerlink" title="3.前期架设"></a>3.前期架设</h2><h3 id="3-1-在GitHub上创建一个-Repo"><a href="#3-1-在GitHub上创建一个-Repo" class="headerlink" title="3.1.在GitHub上创建一个 Repo"></a>3.1.在GitHub上创建一个 Repo</h3><p>在游览器中登录<a href="http://www.github.com" target="_blank" rel="noopener">GitHub</a>，创建一个 Repo，名称格式为 <code>yourname.github.io</code>。比如我的个人GitHub账户用户名是<code>jackchensky</code>，所以，我的这个Repo名称就是 <code>jackchensky.github.io</code>。</p>
+<h3 id="3-2-确认本地已经安装好-git-和-npm"><a href="#3-2-确认本地已经安装好-git-和-npm" class="headerlink" title="3.2.确认本地已经安装好 git 和 npm"></a>3.2.确认本地已经安装好 git 和 npm</h3><p>在终端或者iTerm里输入一下命令确认git与npm已经成功安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">npm --version</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-安装-Hexo"><a href="#3-3-安装-Hexo" class="headerlink" title="3.3.安装 Hexo"></a>3.3.安装 Hexo</h3><p>在终端或者iTerm 中继续输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-本地创建工作目录"><a href="#3-4-本地创建工作目录" class="headerlink" title="3.4.本地创建工作目录"></a>3.4.本地创建工作目录</h3><p>现在去你的GitHub把你的Repo的git地址拷贝出来</p>
+<blockquote>
+<ul>
+<li>我的是 <a href="https://github.com/jackchensky/jackchensky.github.io.git" target="_blank" rel="noopener">https://github.com/jackchensky/jackchensky.github.io.git</a></li>
+<li>你的是<a href="https://github.com/jackchensky/jackchensky.github.io.git" target="_blank" rel="noopener">https://github.com/yourname/yourname.github.io.git</a> (请把yourname换成你的GitHub用户名)。</li>
+</ul>
+</blockquote>
+<p>然后在终端或iTerm中输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Public</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-5-让你本地网站初始化"><a href="#3-5-让你本地网站初始化" class="headerlink" title="3.5.让你本地网站初始化"></a>3.5.让你本地网站初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init yourname.github.io</span><br><span class="line"><span class="built_in">cd</span> yourname.github.io</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>完成以上步骤之后，你可以打开游览器，在地址栏里输入： <code>localhost:4000</code>,看看初始默认网页的样子！</p>
+<h3 id="3-6-现在部署到GitHub上去"><a href="#3-6-现在部署到GitHub上去" class="headerlink" title="3.6.现在部署到GitHub上去"></a>3.6.现在部署到GitHub上去</h3><p>在终端或者iTerm中进入到jackchensky.github.io目录下，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atom .</span><br></pre></td></tr></table></figure></p>
+<p>😝 …是不是看到Atom自动打开 <code>yourname.github.io</code>这个目录下了吧！是不是很神奇。在计算机字符术语中 <code>.</code> 代表“所有的”，所以，<code>atom .</code>就是说“用Atom 这个程序打开当前目录内的所有文件”… 现在将Atom的左侧面板中找到 <code>_config.yml</code>文件，搜索到 deploy ，改成如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: httPs://github.com/yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure></p>
+<p>PS: 记得要把<code>yourname</code>改成你的GitHub用户名！<br>现在就剩下最后一步了，在终端或者iTerm中输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">open http://yourname.github.io</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-7-Hexo基本命令"><a href="#3-7-Hexo基本命令" class="headerlink" title="3.7.Hexo基本命令"></a>3.7.Hexo基本命令</h3><p>Hexo通常基本命令就四个，而且还可以使用组合命令。基本命令如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo g = hexo generate  <span class="comment">#生成</span></span><br><span class="line">hexo s = hexo server    <span class="comment">#启动本地预览</span></span><br><span class="line">hexo d = hexo deploy    <span class="comment">#远程部署</span></span><br><span class="line">---</span><br><span class="line">hexo n <span class="string">"文章标题"</span> = hexo new <span class="string">"文章标题"</span>    <span class="comment">#新建一篇文章</span></span><br></pre></td></tr></table></figure></p>
+<p>通常为了提高效率，选择用组合命令，如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s -g   <span class="comment">#等同于输入 hexo g,再输入 hexo s</span></span><br><span class="line">hexo d -g   <span class="comment">#等同于输入 hexo g,再输入 hexo d</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3-8-总结"><a href="#3-8-总结" class="headerlink" title="3.8.总结"></a>3.8.总结</h3><p>现在你可以自己来创建文章，并进行体验编辑带来的乐趣和优雅！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/12/write-before/" rel="next" title="写在开始之前">
+                <i class="fa fa-chevron-left"></i> 写在开始之前
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/22/hexo-error/" rel="prev" title="解决Hexo本地生成后出现的错误问题">
+                解决Hexo本地生成后出现的错误问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDI1Ny8xMDc5NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jackchen</p>
+              <p class="site-description motion-element" itemprop="description">让学习融入生活，让生活变得有趣！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jackchensky" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/jackchensky" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/jackchen" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-Weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/jackchen" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-douban"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jackchen" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-Zhihu"></i>Zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://qingsucai.com/" title="轻素材" target="_blank">轻素材</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前言"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-准备"><span class="nav-number">2.</span> <span class="nav-text">2.准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-前期架设"><span class="nav-number">3.</span> <span class="nav-text">3.前期架设</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-在GitHub上创建一个-Repo"><span class="nav-number">3.1.</span> <span class="nav-text">3.1.在GitHub上创建一个 Repo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-确认本地已经安装好-git-和-npm"><span class="nav-number">3.2.</span> <span class="nav-text">3.2.确认本地已经安装好 git 和 npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-安装-Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">3.3.安装 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-本地创建工作目录"><span class="nav-number">3.4.</span> <span class="nav-text">3.4.本地创建工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-让你本地网站初始化"><span class="nav-number">3.5.</span> <span class="nav-text">3.5.让你本地网站初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-现在部署到GitHub上去"><span class="nav-number">3.6.</span> <span class="nav-text">3.6.现在部署到GitHub上去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-Hexo基本命令"><span class="nav-number">3.7.</span> <span class="nav-text">3.7.Hexo基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-总结"><span class="nav-number">3.8.</span> <span class="nav-text">3.8.总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jackchen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

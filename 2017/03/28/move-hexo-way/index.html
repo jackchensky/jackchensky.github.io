@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jackchen Notebook" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前言 用了八年的MacBookPro突然当机无法启动了，自己拆了修了两天也没有能够救活，只能换买了新电脑。新电脑收到后各种安装和环境配置真心累。还有恢复Hexo的工作想起来似乎很easy，但是做起来却遇到了各种大小坑。今天记录一下，留着给需要的小伙伴们。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Hexo换电脑后的恢复和配置问题">
+<meta property="og:url" content="https://jackchensky.github.io/2017/03/28/move-hexo-way/index.html">
+<meta property="og:site_name" content="Jackchen Notebook">
+<meta property="og:description" content="前言 用了八年的MacBookPro突然当机无法启动了，自己拆了修了两天也没有能够救活，只能换买了新电脑。新电脑收到后各种安装和环境配置真心累。还有恢复Hexo的工作想起来似乎很easy，但是做起来却遇到了各种大小坑。今天记录一下，留着给需要的小伙伴们。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img.jackchen.cn/image/jpg/move-hexo-way.jpg">
+<meta property="og:updated_time" content="2021-10-03T07:50:35.083Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于Hexo换电脑后的恢复和配置问题">
+<meta name="twitter:description" content="前言 用了八年的MacBookPro突然当机无法启动了，自己拆了修了两天也没有能够救活，只能换买了新电脑。新电脑收到后各种安装和环境配置真心累。还有恢复Hexo的工作想起来似乎很easy，但是做起来却遇到了各种大小坑。今天记录一下，留着给需要的小伙伴们。">
+<meta name="twitter:image" content="https://img.jackchen.cn/image/jpg/move-hexo-way.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jackchensky.github.io/2017/03/28/move-hexo-way/">
+
+
+
+
+
+  <title>关于Hexo换电脑后的恢复和配置问题 | Jackchen Notebook</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jackchen Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="http://jackchen.cn/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br>
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jackchensky.github.io/2017/03/28/move-hexo-way/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jackchen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackchen Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于Hexo换电脑后的恢复和配置问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T09:01:20+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://img.jackchen.cn/image/jpg/move-hexo-way.jpg" alt="关于Hexo换电脑后的恢复和配置问题"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>用了八年的MacBookPro突然当机无法启动了，自己拆了修了两天也没有能够救活，只能换买了新电脑。新电脑收到后各种安装和环境配置真心累。还有恢复Hexo的工作想起来似乎很easy，但是做起来却遇到了各种大小坑。今天记录一下，留着给需要的小伙伴们。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="安装需要的开发环境"><a href="#安装需要的开发环境" class="headerlink" title="安装需要的开发环境"></a>安装需要的开发环境</h2><h4 id="XCode"><a href="#XCode" class="headerlink" title="XCode"></a>XCode</h4><p>这个东东安装以前安装很费劲的，因为有好几个G，所以下载等待通常是很漫长的，不过现在可以在终端中直接用命令行来安装了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+<h4 id="安装-Homebrew"><a href="#安装-Homebrew" class="headerlink" title="安装 Homebrew"></a>安装 Homebrew</h4><p><code>Homebrew</code> 是一个软件包管理系统。Mac OS X是基于Unix的操作系统，可以安装大部分为Unix/Linux开发的软件。然而，如果只是以使用为目的，对每个软件都进行手工编译不是很方便，也不利于管理已安装的软件，于是出现了类似于Linux中APT、Yum等类似的软件包管理系统，其中最著名的有MacPorts、Fink、Homebrew等。</p>
+<p>还是在命令行工具中拷贝粘贴以下代码，而后按回车键<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure></p>
+<p>随后再次在命令行工具中拷贝粘贴以下代码，而后按回车键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;export PATH=&quot;/usr/local/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<h4 id="安装-Git-工具"><a href="#安装-Git-工具" class="headerlink" title="安装 Git 工具"></a>安装 Git 工具</h4><p><code>Git</code> 是一个版本控制工具，它有点像时间机器，可以让你回到从前。使用 <code>Git</code> 管理你的项目，对项目做出修改以后，提交一下，写一条信息，说明一下为啥做出这样的修改。在未来你可以恢复到之前提交的那个点上。不管你是设计师还是开发者，都应该学会使用 <code>Git</code>。后面我会教大家用 <code>Git</code> 工具来备份自己的 <code>Hexo</code> 到 <code>GitHub</code> 中。</p>
+<p>还是在命令行工具中拷贝粘贴以下代码，而后按回车键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+<h4 id="安装-rvm-与-Ruby-2-3-1"><a href="#安装-rvm-与-Ruby-2-3-1" class="headerlink" title="安装 rvm 与 Ruby 2.3.1"></a>安装 rvm 与 Ruby 2.3.1</h4><p>分别输入下面三行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\curl -sSL https://get.rvm.io | bash -s stable</span><br><span class="line">rvm install 2.3.1</span><br><span class="line">rvm use 2.3.1</span><br></pre></td></tr></table></figure></p>
+<p><code>rvm</code> 是 <code>Ruby</code> 的版本管理工具，其作用是在系统中安装若干个不同版本的 <code>Ruby</code>，且不让它们之间发生冲突。你可以安装很多个版本的 <code>Ruby</code>，比如，刚刚安装了 <code>2.3.1</code>，随后你还可以安装 <code>1.9.2</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm install 1.9.2</span><br></pre></td></tr></table></figure>
+<p>当你需要使用 <code>1.9.2</code> 版本的 <code>Ruby</code> 的时候，就可以用下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.9.2</span><br></pre></td></tr></table></figure>
+<p>当然你也可以随时切换回之前的版本，如果想要卸载哪个版本的 <code>Ruby</code>，你可以用下面命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm uninstall 1.9.2</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装-nvm-和-node"><a href="#安装-nvm-和-node" class="headerlink" title="安装 nvm 和 node"></a>安装 nvm 和 node</h4><blockquote>
+<p>这边要重点说一下，因为在这里遇到过一个坑，耗了不少时间，因为网上有各种安装方法。一些已经不太官方，所以在安装后调试Hexo环境总是出现各种错误。最后搞得电脑里面乱乱的，最后强迫症的作用下，找了方法彻底清理后重新安装。</p>
+</blockquote>
+<h6 id="思路如下："><a href="#思路如下：" class="headerlink" title="思路如下："></a>思路如下：</h6><ul>
+<li>用brew来安装nvm，并管理nvm的升级</li>
+<li>用nvm来安装node.js，并管理node.js的升级</li>
+</ul>
+<p>卸载掉老版本的 Node 和 nvm</p>
+<h6 id="卸载Node"><a href="#卸载Node" class="headerlink" title="卸载Node"></a>卸载Node</h6><ul>
+<li>如果是从brew安装的, 运行brew uninstall node</li>
+<li>删除~/目录下所有node和node_modules</li>
+<li>删除/usr/local/lib中的所有node和node_modules</li>
+<li>删除/usr/local/lib中的所有node和node_modules的文件夹</li>
+<li>在/usr/local/bin中, 删除所有node的可执行文件(node和npm)</li>
+</ul>
+<h6 id="命令行整理后如下："><a href="#命令行整理后如下：" class="headerlink" title="命令行整理后如下："></a>命令行整理后如下：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf ~/.npm</span><br><span class="line">sudo rm -rf ~/node_modules</span><br><span class="line">sudo rm -rf ~/.node-gyp</span><br><span class="line">sudo rm /usr/local/bin/node</span><br><span class="line">sudo rm /usr/local/bin/npm</span><br><span class="line">sudo rm /usr/local/lib/dtrace/node.d</span><br></pre></td></tr></table></figure>
+<p>扩展参考：<a href="https://www.zhihu.com/question/27389115/answer/36434788" target="_blank" rel="noopener"><em>如何删除node.js</em></a></p>
+<h6 id="卸载-nvm"><a href="#卸载-nvm" class="headerlink" title="卸载.nvm"></a>卸载.nvm</h6><p>手动安装的nvm，删除下面这三个就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/.nvm</span><br><span class="line">rm -rf ~/.npm</span><br><span class="line">rm -rf ~/.bower</span><br></pre></td></tr></table></figure></p>
+<p>还需要删除这个文件中的一段配置 <code>.bash_profile</code> (用brew安装后还需要重新加上的哦)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># vim .bash_profile</span><br><span class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</span><br><span class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm</span><br></pre></td></tr></table></figure>
+<p>扩展参考：<a href="https://github.com/creationix/nvm/issues/298" target="_blank" rel="noopener"><em>How to uninstall nvm? #298</em></a></p>
+<h6 id="确认是否清理干净"><a href="#确认是否清理干净" class="headerlink" title="确认是否清理干净"></a>确认是否清理干净</h6><p>重启终端后，分别输入下面几个命令应该都是找不到，才算是正确的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm</span><br><span class="line">node</span><br><span class="line">npm</span><br></pre></td></tr></table></figure></p>
+<h6 id="重新安装"><a href="#重新安装" class="headerlink" title="重新安装"></a>重新安装</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 使用brew安装nvm</span><br><span class="line">brew install nvm</span><br><span class="line"># vim .bash_profile后增加下面这两行</span><br><span class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</span><br><span class="line">source $(brew --prefix nvm)/nvm.sh</span><br><span class="line"># 使用nvm安装node.js</span><br><span class="line">nvm install node</span><br><span class="line"># 校验</span><br><span class="line">$ nvm --version</span><br><span class="line">0.31.0</span><br><span class="line">$ node -v</span><br><span class="line">v5.7.1</span><br><span class="line">$ npm -v</span><br><span class="line">3.6.0</span><br><span class="line">$ nvm list</span><br><span class="line">-&gt;       v5.7.1</span><br><span class="line">default -&gt; node (-&gt; v5.7.1)</span><br><span class="line">node -&gt; stable (-&gt; v5.7.1) (default)</span><br><span class="line">stable -&gt; 5.7 (-&gt; v5.7.1) (default)</span><br><span class="line">iojs -&gt; N/A (default)</span><br></pre></td></tr></table></figure>
+<p>这样就完成了 <code>node</code> 和 <code>nvm</code> 的安装</p>
+<h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>Hexo 是基于 Node.js 的第三方模块，所以我们需要对其进行单独安装。Mac 用户打开 Terminal，输入下面代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure></p>
+<p>（注：NPM的全称是Node Package Manager，是一个Node.js包管理和分发工具，已经成为了非官方的发布Node模块（包）的标准。）</p>
+<h4 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h4><p>在你想要创建的磁盘目录下创建文件夹，比如我之前在 <code>github</code> 同步的文件夹是 <code>jackchensky.github.io</code>,你也可以自己新建个(不要用中文)，然后在终端下输入下面命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Public/jackchensky.github.io  /** 到你的Public文件夹里，jackchensky.github.io目录下 **/</span><br><span class="line">hexo init   /** 创建一个Hexo新框架 **/</span><br></pre></td></tr></table></figure></p>
+<p>这个时候你会发现 <code>Hexo</code> 文件夹下出现了一些文件和文件夹</p>
+<p>继续输入下面代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install /** 安装相应的 node modules （node 模块）**/</span><br><span class="line">hexo g /** 生成一套静态网页，功能和 hexo generate 相似 **/</span><br><span class="line">hexo server /** 在本地建立 Server ，提供访问和浏览 **/</span><br></pre></td></tr></table></figure></p>
+<p>输入完毕后，会提示你使用浏览器进入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<p>这样你就在本地创建好了一个<code>Hexo</code>博客，如果你是新建的博客，可以看我之前的教程，看看如何写文章和生成文章等 <a href="http://localhost:4000/2016/09/12/build-hexo-on-github/" target="_blank" rel="noopener"><em> 在GitHub上架设Hexo静态站</em></a><br>如果你是迁移博客的继续往下看</p>
+<h4 id="将原来的文件拷贝到新电脑中"><a href="#将原来的文件拷贝到新电脑中" class="headerlink" title="将原来的文件拷贝到新电脑中"></a>将原来的文件拷贝到新电脑中</h4><p>这里要注意哪些文件是必须的，哪些文件是可以删除的~</p>
+<ul>
+<li>讨论下哪些文件是必须拷贝的：首先是之前自己修改的文件，像站点配置_config.yml，theme文件夹里面的主题，以及source里面自己写的博客文件，这些肯定要拷贝的。除此之外，还有三个文件需要有，就是scaffolds文件夹（文章的模板）、package.json（说明使用哪些包）和.gitignore（限定在提交的时候哪些文件可以忽略）。其实，这三个文件不是我们修改的，所以即使丢失了，也没有关系，我们可以建立一个新的文件夹，然后在里面执行hexo init，就会生成这三个文件，我们只需要将它们拷贝过来使用即可。总结：<code>_config.yml，theme/，source/，scaffolds/，package.json，.gitignore</code>，是需要拷贝的。</li>
+<li>再讨论下哪些文件是不必拷贝的，或者说可以删除的：首先是.git文件，无论是在站点根目录下，还是主题目录下的.git文件，都可以删掉。然后是文件夹node_modules（在用npm install会重新生成），public（这个在用hexo g时会重新生成），.deploy_git文件夹（在使用hexo d时也会重新生成），db.json文件。其实上面这些文件也就是是.gitignore文件里面记载的可以忽略的内容。总结：<code>.git/，node_modules/，public/，.deploy_git/，db.json</code> 文件需要删除。</li>
+<li>在git bash中切换目录到新拷贝的文件夹里，使用 <code>npm install</code> 命令，进行模块安装。很明显我们这里没用<code>hexo init</code>初始化，因为有的文件我们已经拷贝生成过来了，所以不必用<code>hexo init</code>去整体初始化，如果不慎在此时用了<code>hexo init</code>，则站点的配置文件 <code>_config.yml</code> 里面内容会被清空使用默认值，所以这一步一定要慎重，不要用<code>hexo init</code>。<blockquote>
+<p>插件安装后，有的需要对配置文件_config.yml进行配置，具体怎么配置，可以参考上面插件在github主页上的具体说明</p>
+</blockquote>
+</li>
+</ul>
+<p>最后使用<code>hexo g</code>，然后使用<code>hexo d</code>进行部署，如果都没有出错，就转移成功了！</p>
+<h4 id="在Github上创建新仓库做备份"><a href="#在Github上创建新仓库做备份" class="headerlink" title="在Github上创建新仓库做备份"></a>在Github上创建新仓库做备份</h4><h4 id="本地项目Git监管"><a href="#本地项目Git监管" class="headerlink" title="本地项目Git监管"></a>本地项目Git监管</h4><p>去你电脑的<code>Hexo</code>目录，比如我在<code>Public</code>中创建的 jackchensky.github.io 目录，想要让 Git 去监管这个项目目录，需要先去初始化一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>现在， 就成功的创建了一个 repository（仓库），下面去查看一下它的状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p>提示我们现在正处在 master（主） 这个 branch（分支）上，然后有一堆还没有跟踪的文件，想让 Git 跟踪这些文件，需要把它添加到 Staging（工作） 区域，然后再去 commit（提交）一下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &apos;第一次提交&apos;</span><br></pre></td></tr></table></figure></p>
+<p>返回信息将看到我们提交的相关信息</p>
+<p>确认一下我们的工作，可以使用 <code>log</code>命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></p>
+<p>再查看一下状态会发现返回信息会告诉我们，木有啥可以提交的 …</p>
+<h4 id="在Github上创建一个新的远程仓库"><a href="#在Github上创建一个新的远程仓库" class="headerlink" title="在Github上创建一个新的远程仓库"></a>在Github上创建一个新的远程仓库</h4><p>使用 <code>github</code> 提供的服务，我们可以把项目文件推送到 <code>github</code> 提供的远程仓库里面，这样，你就不用担心意外删除掉在本地电脑上的项目文件了，因为你在远程的仓库里面，还有一个备份。你可以先去注册一个 <a href="https://github.com" target="_blank" rel="noopener"><em>github</em></a> 帐号，登录以后，去创建一个远程仓库：</p>
+<ul>
+<li>点击页面右上角的 + 号，Repository name 这里，输入仓库的名称</li>
+<li>Description 是可以选填的描述信息</li>
+<li>Public 公开或 Private 私密，如果你不想让别人看到你的项目的代码，应该选择 Private</li>
+<li>点击 Create repository</li>
+</ul>
+<p>创建完成以后，<code>github</code> 会给你提示，你可以在本地去创建一个新的仓库，也可以把本地上已有的仓库推送到创建的这个 <code>github</code> 的远程仓库里面。下面，我们把之前本地创建的<code>jackchensky.github.io</code>项目推送到刚刚在 <code>github</code> 上新建的 <code>backup-blog</code> 项目中去<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/jackchensky/backup-blog.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p>上面这两行命令是，先去为项目添加一个远程的仓库，告诉 <code>git</code> 这个远程仓库的地址是啥，这个仓库是由 <code>github</code> 提供的，然后使用 <code>git push</code> ，去把 <code>master</code> 这个分支推送到这个远程的仓库里面。</p>
+<p>可能这会提示你输入你在 github 上的用户名还有密码~</p>
+<p>完成以后，你可以打开在 <code>github</code> 上的你的项目，你会发现项目里的文件已经显示出来了。在本地上，你可以继续使用 <code>git</code> 去提交修改，创建分支，然后想要把修改的东西推送到 <code>github</code> 上，可以使用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure></p>
+<p>如果<code>git</code>提示这个 <code>fatal: remote origin already exists</code>是因为你可能之前有添加过远程<code>git</code>库，先删除掉远程库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
+<p>然后用上面的方法重新添加就可以了</p>
+<p>OK 👌 .. 这样你就不用害怕你的<code>Hexo</code>博客文件哪天突然丢失啦~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/27/reset-terminal/" rel="next" title="关于Mac OS X中Terminal终端如何恢复默认">
+                <i class="fa fa-chevron-left"></i> 关于Mac OS X中Terminal终端如何恢复默认
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/24/2019-3-wordpress-IP-Bug/" rel="prev" title="修复阿里云服务器报“wordpress IP验证不当”漏洞">
+                修复阿里云服务器报“wordpress IP验证不当”漏洞 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDI1Ny8xMDc5NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jackchen</p>
+              <p class="site-description motion-element" itemprop="description">让学习融入生活，让生活变得有趣！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jackchensky" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/jackchensky" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/jackchen" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-Weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/jackchen" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-douban"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jackchen" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-Zhihu"></i>Zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://qingsucai.com/" title="轻素材" target="_blank">轻素材</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装需要的开发环境"><span class="nav-number">2.</span> <span class="nav-text">安装需要的开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XCode"><span class="nav-number">2.0.1.</span> <span class="nav-text">XCode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Homebrew"><span class="nav-number">2.0.2.</span> <span class="nav-text">安装 Homebrew</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Git-工具"><span class="nav-number">2.0.3.</span> <span class="nav-text">安装 Git 工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-rvm-与-Ruby-2-3-1"><span class="nav-number">2.0.4.</span> <span class="nav-text">安装 rvm 与 Ruby 2.3.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-nvm-和-node"><span class="nav-number">2.0.5.</span> <span class="nav-text">安装 nvm 和 node</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#思路如下："><span class="nav-number">2.0.5.0.1.</span> <span class="nav-text">思路如下：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#卸载Node"><span class="nav-number">2.0.5.0.2.</span> <span class="nav-text">卸载Node</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#命令行整理后如下："><span class="nav-number">2.0.5.0.3.</span> <span class="nav-text">命令行整理后如下：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#卸载-nvm"><span class="nav-number">2.0.5.0.4.</span> <span class="nav-text">卸载.nvm</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#确认是否清理干净"><span class="nav-number">2.0.5.0.5.</span> <span class="nav-text">确认是否清理干净</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#重新安装"><span class="nav-number">2.0.5.0.6.</span> <span class="nav-text">重新安装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">2.0.6.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建文件夹"><span class="nav-number">2.0.7.</span> <span class="nav-text">创建文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将原来的文件拷贝到新电脑中"><span class="nav-number">2.0.8.</span> <span class="nav-text">将原来的文件拷贝到新电脑中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在Github上创建新仓库做备份"><span class="nav-number">2.0.9.</span> <span class="nav-text">在Github上创建新仓库做备份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地项目Git监管"><span class="nav-number">2.0.10.</span> <span class="nav-text">本地项目Git监管</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在Github上创建一个新的远程仓库"><span class="nav-number">2.0.11.</span> <span class="nav-text">在Github上创建一个新的远程仓库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jackchen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

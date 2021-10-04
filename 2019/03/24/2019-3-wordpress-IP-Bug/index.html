@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="wordpress,阿里云,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jackchen Notebook" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前言 嗯，真的好久没有更新了。上一篇文章居然还是2017年的，时间过的真快！最近在阿里云香港服务器上用Docker架设了一个wordpress网站。然后各种折腾好了之后发现阿里云后台总是显示一个漏洞。然后还是高危级别的~强迫症受不了老是看到那个小红标。决定盘它~  准备首先阿里云的后台显示的漏洞名称为wordpress IP验证不当漏洞，听起来是WordPress的一个版本Bug。然后点看具体的">
+<meta name="keywords" content="wordpress,阿里云">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修复阿里云服务器报“wordpress IP验证不当”漏洞">
+<meta property="og:url" content="https://jackchensky.github.io/2019/03/24/2019-3-wordpress-IP-Bug/index.html">
+<meta property="og:site_name" content="Jackchen Notebook">
+<meta property="og:description" content="前言 嗯，真的好久没有更新了。上一篇文章居然还是2017年的，时间过的真快！最近在阿里云香港服务器上用Docker架设了一个wordpress网站。然后各种折腾好了之后发现阿里云后台总是显示一个漏洞。然后还是高危级别的~强迫症受不了老是看到那个小红标。决定盘它~  准备首先阿里云的后台显示的漏洞名称为wordpress IP验证不当漏洞，听起来是WordPress的一个版本Bug。然后点看具体的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.jackchen.cn/pic-5.jpg">
+<meta property="og:updated_time" content="2021-10-03T07:50:35.081Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="修复阿里云服务器报“wordpress IP验证不当”漏洞">
+<meta name="twitter:description" content="前言 嗯，真的好久没有更新了。上一篇文章居然还是2017年的，时间过的真快！最近在阿里云香港服务器上用Docker架设了一个wordpress网站。然后各种折腾好了之后发现阿里云后台总是显示一个漏洞。然后还是高危级别的~强迫症受不了老是看到那个小红标。决定盘它~  准备首先阿里云的后台显示的漏洞名称为wordpress IP验证不当漏洞，听起来是WordPress的一个版本Bug。然后点看具体的">
+<meta name="twitter:image" content="http://img.jackchen.cn/pic-5.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jackchensky.github.io/2019/03/24/2019-3-wordpress-IP-Bug/">
+
+
+
+
+
+  <title>修复阿里云服务器报“wordpress IP验证不当”漏洞 | Jackchen Notebook</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jackchen Notebook</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="http://jackchen.cn/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br>
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jackchensky.github.io/2019/03/24/2019-3-wordpress-IP-Bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jackchen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackchen Notebook">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">修复阿里云服务器报“wordpress IP验证不当”漏洞</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-24T14:00:13+08:00">
+                2019-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/wordpress/" itemprop="url" rel="index">
+                    <span itemprop="name">wordpress</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.jackchen.cn/pic-5.jpg" alt="修复wordpress IP验证不当"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>嗯，真的好久没有更新了。上一篇文章居然还是2017年的，时间过的真快！最近在阿里云香港服务器上用Docker架设了一个wordpress网站。然后各种折腾好了之后发现阿里云后台总是显示一个漏洞。然后还是高危级别的~强迫症受不了老是看到那个小红标。决定盘它~</p>
+</blockquote>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>首先阿里云的后台显示的漏洞名称为<code>wordpress IP验证不当漏洞</code>，听起来是WordPress的一个版本Bug。然后点看具体的看了说明里给出的详细说明如下：</p>
+<blockquote>
+<p>wordpress /wp-includes/http.php文件中的wp_http_validate_url函数对输入IP验证不当，导致黑客可构造类似于012.10.10.10这样的畸形IP绕过验证，进行SSRF。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="查询分析"><a href="#查询分析" class="headerlink" title="查询分析"></a>查询分析</h2><h4 id="解决办法一："><a href="#解决办法一：" class="headerlink" title="解决办法一："></a>解决办法一：</h4><p>可以升级你的阿里云后台云盾到企业版（前提是你真的非常有钱），一键自动修复（没试过，好不好用不清楚）</p>
+<h4 id="解决办法二："><a href="#解决办法二：" class="headerlink" title="解决办法二："></a>解决办法二：</h4><p>如果你的网站后台不复杂且经常性的升级wordpress到最新版本，可以尝试升级你的wordpress到官方最新版本（不确定升级后漏洞就会消失，升级前记得要给网站备份，备份，备份！）</p>
+<h4 id="解决办法三："><a href="#解决办法三：" class="headerlink" title="解决办法三："></a>解决办法三：</h4><p>其实很多问题遇到了之后要学会用关键字去Google找答案，嗯，没错~ 是谷歌不是某度！！某度搜出来的都是坑和广告。网上转了一圈后发现问题在<code>http.php</code>这个文件上。嗯，目标锁定就开始盘吧~</p>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><h4 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h4><p>我是用SSH连接的服务器，如果你有ftp可以直接找到WordPress安装目录下的<code>wp-includes/http.php</code>文件，下载到本地用记事本打开后修改。如果你是用SSH连接，就在终端或者iTerm 中输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@你的服务器IP地址或域名</span><br></pre></td></tr></table></figure></p>
+<p>然后输入密码登录</p>
+<h4 id="修改准备"><a href="#修改准备" class="headerlink" title="修改准备"></a>修改准备</h4><p>如果你的服务器没有使用Docker容器，那直接找到<code>wp-includes/http.php</code>文件，然后vim进入修改就可以了。如果你是用Docker容器安装的。先找到放置容器配置文件的目录下，然后在终端或者iTerm 中输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose <span class="built_in">exec</span> WordPress bash</span><br></pre></td></tr></table></figure></p>
+<p>这样你就可以进入到这个容器的包文件中，然后找到<code>wp-includes/http.php</code>文件，进入<code>vi http.php</code>修改。如果提示无法编辑。可能是因为没有安装vi。直接输入<code>apt-get install vim</code>来安装Vi。如果提示：Unable to locate package vim,则需要输入<code>apt-get update</code>, 等更新完毕以后再敲命令：<code>apt-get install vim</code>就OK啦~ 下面开始修改<code>http.php</code>这个文件。</p>
+<h4 id="修改文件-记得提前备份一下要修改的文件"><a href="#修改文件-记得提前备份一下要修改的文件" class="headerlink" title="修改文件(记得提前备份一下要修改的文件)"></a>修改文件(记得提前备份一下要修改的文件)</h4><p>1、大概在533行（不同的WordPress版本可能行数不同，你可以查找关键词进行查找）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$same_host</span> = strtolower( <span class="variable">$parsed_home</span>[<span class="string">'host'</span>] ) === strtolower( <span class="variable">$parsed_url</span>[<span class="string">'host'</span>] );</span><br><span class="line">/*修改为*/</span><br><span class="line"><span class="variable">$same_host</span> = (  strtolower( <span class="variable">$parsed_home</span>[<span class="string">'host'</span>] ) === strtolower( <span class="variable">$parsed_url</span>[<span class="string">'host'</span>] ) || <span class="string">'localhost'</span> == strtolower(<span class="variable">$parsed_url</span>[<span class="string">'host'</span>]));</span><br></pre></td></tr></table></figure></p>
+<p>2、在http.php文件的549行（不同的WordPress版本可能行数不同，你可以查找关键词进行查找）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( 127 === <span class="variable">$parts</span>[0] || 10 === <span class="variable">$parts</span>[0] || 0 === <span class="variable">$parts</span>[0]</span><br><span class="line">/*修改为：*/</span><br><span class="line"><span class="keyword">if</span> ( 127 === <span class="variable">$parts</span>[0] || 10 === <span class="variable">$parts</span>[0] || 0 === <span class="variable">$parts</span>[0] || 0 === <span class="variable">$parts</span>[0]</span><br></pre></td></tr></table></figure></p>
+<h4 id="去验证"><a href="#去验证" class="headerlink" title="去验证"></a>去验证</h4><p>修改完以上内容，然后再到阿里云盾控制台重新验证一下漏洞，就会发现漏洞已经不存在了。以为这样就解决了，但是第二天打开后台，这个漏洞又冒出来~ 气人！！</p>
+<h4 id="第三处修改"><a href="#第三处修改" class="headerlink" title="第三处修改"></a>第三处修改</h4><p>各种找了各种尝试后，发现还有一个地方要修改，还是http.php文件的540行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">preg_match(<span class="string">'#^(([1-9]?\d|1\d\d|25[0-5]|2[0-4]\d)\.)&#123;3&#125;([1-9]?\d|1\d\d|25[0-5]|2[0-4]\d)$#'</span>, <span class="variable">$host</span>)</span><br><span class="line">/*修改为：*/</span><br><span class="line">preg_match(<span class="string">'#^(([1-9]?\d|1\d\d|25[0-5]|2[0-4]\d|0+\d+)\.)&#123;3&#125;([1-9]?\d|1\d\d|25[0-5]|2[0-4]\d)$#'</span>, <span class="variable">$host</span>)</span><br></pre></td></tr></table></figure></p>
+<p>好像是为了既增加对0开头的012.10.10.10这样的IP进行验证！修改完，然后再到阿里云盾控制台重新验证一下漏洞，就会发现漏洞已经不存在了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实我的个人博客站<a href="http://www.jackchen.cn/blog" target="_blank" rel="noopener">设计创意1984</a>也是wordpress架构的，wordpress大大简化了个人建站甚至企业建站的上限要求。对于很多设计师和前端来说都可以尝试的去学习下wordpress建站的方法。可以快速有效的搭建出各种类型的网站。确实不错！！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wordpress/" rel="tag"># wordpress</a>
+          
+            <a href="/tags/阿里云/" rel="tag"># 阿里云</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/28/move-hexo-way/" rel="next" title="关于Hexo换电脑后的恢复和配置问题">
+                <i class="fa fa-chevron-left"></i> 关于Hexo换电脑后的恢复和配置问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/04/2019-4-restore-wp-classic-editor/" rel="prev" title="一句代码硬核恢复wordpress经典编辑器">
+                一句代码硬核恢复wordpress经典编辑器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDI1Ny8xMDc5NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jackchen</p>
+              <p class="site-description motion-element" itemprop="description">让学习融入生活，让生活变得有趣！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jackchensky" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/jackchensky" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/jackchen" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-Weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/jackchen" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-douban"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jackchen" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-Zhihu"></i>Zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://qingsucai.com/" title="轻素材" target="_blank">轻素材</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询分析"><span class="nav-number">3.</span> <span class="nav-text">查询分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法一："><span class="nav-number">3.0.1.</span> <span class="nav-text">解决办法一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法二："><span class="nav-number">3.0.2.</span> <span class="nav-text">解决办法二：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法三："><span class="nav-number">3.0.3.</span> <span class="nav-text">解决办法三：</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决"><span class="nav-number">4.</span> <span class="nav-text">问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连接服务器"><span class="nav-number">4.0.1.</span> <span class="nav-text">连接服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改准备"><span class="nav-number">4.0.2.</span> <span class="nav-text">修改准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改文件-记得提前备份一下要修改的文件"><span class="nav-number">4.0.3.</span> <span class="nav-text">修改文件(记得提前备份一下要修改的文件)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去验证"><span class="nav-number">4.0.4.</span> <span class="nav-text">去验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三处修改"><span class="nav-number">4.0.5.</span> <span class="nav-text">第三处修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jackchen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
