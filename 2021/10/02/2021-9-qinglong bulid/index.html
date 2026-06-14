@@ -1,166 +1,54 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.2">
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
+<link rel="stylesheet" href="/css/main.css">
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"me.jackchen.cn","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Docker,qinglong,京豆,薅羊毛,">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Jackchen Notebook" type="application/atom+xml">
-
-
-
-
-
-
-<meta name="description" content="前言 本来对薅羊毛这种事情没太在意，直到有一天发现身边的人都在薅羊毛，瞬间感觉自己少赚了“几个亿”的感觉。然后就研究了下在GitHub上自动化撸羊毛，注册了个GitHub马甲号，才薅了一天账户就直接被封停了😂 说明薅羊毛这种事情已经是一个事件了，不是小众人群了。然后又发现了大牛都在用青龙面板来自动化薅羊毛。手头正好有一天服务器里有装了Docker，上一篇文章我正好有分享给大家如何在服务器上配置">
-<meta name="keywords" content="Docker,qinglong,京豆,薅羊毛">
+    <meta name="description" content="前言 本来对薅羊毛这种事情没太在意，直到有一天发现身边的人都在薅羊毛，瞬间感觉自己少赚了“几个亿”的感觉。然后就研究了下在GitHub上自动化撸羊毛，注册了个GitHub马甲号，才薅了一天账户就直接被封停了😂 说明薅羊毛这种事情已经是一个事件了，不是小众人群了。然后又发现了大牛都在用青龙面板来自动化薅羊毛。手头正好有一天服务器里有装了Docker，上一篇文章我正好有分享给大家如何在服务器上配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="青龙面板搭建踩坑指南">
-<meta property="og:url" content="https://jackchensky.github.io/2021/10/02/2021-9-qinglong bulid/index.html">
+<meta property="og:url" content="https://me.jackchen.cn/2021/10/02/2021-9-qinglong%20bulid/index.html">
 <meta property="og:site_name" content="Jackchen Notebook">
 <meta property="og:description" content="前言 本来对薅羊毛这种事情没太在意，直到有一天发现身边的人都在薅羊毛，瞬间感觉自己少赚了“几个亿”的感觉。然后就研究了下在GitHub上自动化撸羊毛，注册了个GitHub马甲号，才薅了一天账户就直接被封停了😂 说明薅羊毛这种事情已经是一个事件了，不是小众人群了。然后又发现了大牛都在用青龙面板来自动化薅羊毛。手头正好有一天服务器里有装了Docker，上一篇文章我正好有分享给大家如何在服务器上配置">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.jackchen.cn/moniz-wallpaper-1920.jpg">
 <meta property="og:image" content="https://img.jackchen.cn/%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE-01.png">
 <meta property="og:image" content="https://img.jackchen.cn/%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE-02.png">
 <meta property="og:image" content="https://img.jackchen.cn/%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE-03.png">
 <meta property="og:image" content="https://img.jackchen.cn/%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93.png">
-<meta property="og:updated_time" content="2021-10-05T09:32:33.189Z">
+<meta property="article:published_time" content="2021-10-01T18:06:39.000Z">
+<meta property="article:modified_time" content="2026-06-13T07:52:53.301Z">
+<meta property="article:author" content="Jackchen">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="qinglong">
+<meta property="article:tag" content="京豆">
+<meta property="article:tag" content="薅羊毛">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="青龙面板搭建踩坑指南">
-<meta name="twitter:description" content="前言 本来对薅羊毛这种事情没太在意，直到有一天发现身边的人都在薅羊毛，瞬间感觉自己少赚了“几个亿”的感觉。然后就研究了下在GitHub上自动化撸羊毛，注册了个GitHub马甲号，才薅了一天账户就直接被封停了😂 说明薅羊毛这种事情已经是一个事件了，不是小众人群了。然后又发现了大牛都在用青龙面板来自动化薅羊毛。手头正好有一天服务器里有装了Docker，上一篇文章我正好有分享给大家如何在服务器上配置">
 <meta name="twitter:image" content="https://img.jackchen.cn/moniz-wallpaper-1920.jpg">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+<link rel="canonical" href="https://me.jackchen.cn/2021/10/02/2021-9-qinglong%20bulid/">
 
 
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://me.jackchen.cn/2021/10/02/2021-9-qinglong%20bulid/","path":"2021/10/02/2021-9-qinglong bulid/","title":"青龙面板搭建踩坑指南"}</script>
 
-  <link rel="canonical" href="https://jackchensky.github.io/2021/10/02/2021-9-qinglong bulid/">
-
-
-
-
-
-  <title>青龙面板搭建踩坑指南 | Jackchen Notebook</title>
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>青龙面板搭建踩坑指南 | Jackchen Notebook</title>
   
 
 
@@ -170,229 +58,227 @@
 
 
 
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Jackchen Notebook" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jackchen Notebook</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Jackchen Notebook</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
   </div>
 </div>
 
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-blog">
-          <a href="http://jackchen.cn/blog" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br>
-            
-            博客
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-blog"><a href="http://jackchen.cn/blog" rel="section" target="_blank"><i class="fa fa-coffee fa-fw"></i>blog</a></li>
+  </ul>
 </nav>
 
 
 
- </div>
-    </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+</header>
+        
+  
+  <aside class="sidebar">
 
-  <div id="posts" class="posts-expand">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text">1.安装配置青龙面板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%99%BB%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">2.登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%8B%89%E5%8F%96%E8%84%9A%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">3.拉取脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%A4%87%E4%BB%BD"><span class="nav-number">5.</span> <span class="nav-text">4.备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%9B%B4%E6%96%B0"><span class="nav-number">6.</span> <span class="nav-text">5.更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">6.总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jackchen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Jackchen</p>
+  <div class="site-description" itemprop="description">让学习融入生活，让生活变得有趣！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jackchensky" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jackchensky" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/jackchensky" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;jackchensky" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/jackchen" title="Weibo → http:&#x2F;&#x2F;weibo.com&#x2F;jackchen" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/jackchen" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;jackchen" rel="noopener me" target="_blank"><i class="fa fa-star fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/jackchen" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;jackchen" rel="noopener me" target="_blank"><i class="fa fa-tag fa-fw"></i>Zhihu</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
     
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="http://qingsucai.com/" title="http:&#x2F;&#x2F;qingsucai.com&#x2F;" rel="noopener" target="_blank">轻素材</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jackchensky.github.io/2021/10/02/2021-9-qinglong bulid/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://me.jackchen.cn/2021/10/02/2021-9-qinglong%20bulid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Jackchen">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Jackchen Notebook">
+      <meta itemprop="description" content="让学习融入生活，让生活变得有趣！">
     </span>
 
-    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="青龙面板搭建踩坑指南 | Jackchen Notebook">
+      <meta itemprop="description" content="">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          青龙面板搭建踩坑指南
+        </h1>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">青龙面板搭建踩坑指南</h1>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-10-02T02:06:39+08:00">
-                2021-10-02
-              </time>
-            
+      <time title="创建时间：2021-10-02 02:06:39" itemprop="dateCreated datePublished" datetime="2021-10-02T02:06:39+08:00">2021-10-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+        </span>
+    </span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p><img src="https://img.jackchen.cn/moniz-wallpaper-1920.jpg" alt="正确薅羊毛的架构方式"></p>
+    <div class="post-body" itemprop="articleBody"><p><img src="https://img.jackchen.cn/moniz-wallpaper-1920.jpg" alt="正确薅羊毛的架构方式"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>本来对薅羊毛这种事情没太在意，直到有一天发现身边的人都在薅羊毛，瞬间感觉自己少赚了“几个亿”的感觉。然后就研究了下在GitHub上自动化撸羊毛，注册了个GitHub马甲号，才薅了一天账户就直接被封停了😂 说明薅羊毛这种事情已经是一个事件了，不是小众人群了。然后又发现了大牛都在用青龙面板来自动化薅羊毛。手头正好有一天服务器里有装了Docker，上一篇文章我正好有分享给大家<a href="https://me.jackchen.cn/2019/09/03/2019-8-Docker%20bulid%20wordpress/" target="_blank" rel="noopener"><code>如何在服务器上配置Docker环境来安装WordPress</code></a>的教程，（刚看了下，发现上一篇文章还是2019年写的，整个2020年没写一篇文章，我也是服了我自己了~ 😄 ）</p>
+<p>本来对薅羊毛这种事情没太在意，直到有一天发现身边的人都在薅羊毛，瞬间感觉自己少赚了“几个亿”的感觉。然后就研究了下在GitHub上自动化撸羊毛，注册了个GitHub马甲号，才薅了一天账户就直接被封停了😂 说明薅羊毛这种事情已经是一个事件了，不是小众人群了。然后又发现了大牛都在用青龙面板来自动化薅羊毛。手头正好有一天服务器里有装了Docker，上一篇文章我正好有分享给大家<a href="https://me.jackchen.cn/2019/09/03/2019-8-Docker%20bulid%20wordpress/"><code>如何在服务器上配置Docker环境来安装WordPress</code></a>的教程，（刚看了下，发现上一篇文章还是2019年写的，整个2020年没写一篇文章，我也是服了我自己了~ 😄 ）</p>
 </blockquote>
 <h2 id="1-安装配置青龙面板"><a href="#1-安装配置青龙面板" class="headerlink" title="1.安装配置青龙面板"></a>1.安装配置青龙面板</h2><blockquote>
-<p>前置要求需要服务器已经安装了Docker-ce，选装了Docker-compose<br><a id="more"></a></p>
+<p>前置要求需要服务器已经安装了Docker-ce，选装了Docker-compose</p>
 </blockquote>
+<span id="more"></span>
+
 <p>符合上面的前置要求后可以按照下面的安装方式来安装青龙面板</p>
 <blockquote>
 <ol>
@@ -403,525 +289,121 @@
 </ol>
 </blockquote>
 <p>通过ssh连接到服务器后具体的执行方式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 新建数据文件夹</span><br><span class="line">mkdir qinglong</span><br><span class="line">cd qinglong</span><br><span class="line"># 下载docker-compose.yml文件</span><br><span class="line">wget https://raw.githubusercontent.com/whyour/qinglong/develop/docker-compose.yml</span><br><span class="line"># 启动</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-<h2 id="2-登录"><a href="#2-登录" class="headerlink" title="2.登录"></a>2.登录</h2><p>打开浏览器访问宿主机ip的5700端口即可 <br><br>例如 <code>http://192.168.100.123:5700即ip:5700</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 新建数据文件夹</span><br><span class="line">mkdir qinglong</span><br><span class="line">cd qinglong</span><br><span class="line"># 下载docker-compose.yml文件</span><br><span class="line">wget https://raw.githubusercontent.com/whyour/qinglong/develop/docker-compose.yml</span><br><span class="line"># 启动</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-登录"><a href="#2-登录" class="headerlink" title="2.登录"></a>2.登录</h2><p>打开浏览器访问宿主机ip的5700端口即可</p>
+<p>例如 <code>http://192.168.100.123:5700即ip:5700</code></p>
 <blockquote>
 <p>如果页面无法打开，记得看下服务器的 5700 端口有没有打开，我配置完后也无法打开，然后本准备秀一把直接在服务器里用 <code>firewall-cmd</code> 命令来打开 5700 端口的，最后发现 5700 端口没能打开，连Docker上其他网站都打不开了，于是就乖乖登录阿里云后台安全策略中添加了5700端口。</p>
 </blockquote>
-<p>具体配置方法可以参考下图：<br><img src="https://img.jackchen.cn/%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE-01.png" alt="端口配置1"></p>
+<p>具体配置方法可以参考下图：</p>
+<p><img src="https://img.jackchen.cn/%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE-01.png" alt="端口配置1"></p>
 <p><img src="https://img.jackchen.cn/%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE-02.png" alt="端口配置2"></p>
 <p><img src="https://img.jackchen.cn/%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE-03.png" alt="端口配置3"></p>
 <blockquote>
-<p>首次登录<br><br>账号:admin 密码:admin<br><br>会生成<code>auth.json</code></p>
+<p>首次登录</p>
+<p>账号:admin 密码:admin</p>
+<p>会生成<code>auth.json</code></p>
 </blockquote>
 <p>在ssh输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.docker exec it qinglong bash</span><br><span class="line">2.cat /ql/config/auth.json</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.docker exec it qinglong bash</span><br><span class="line">2.cat /ql/config/auth.json</span><br></pre></td></tr></table></figure>
+
 <p>cat查看之后返回的结果类似如下字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;Xb-ZYP526wmg4_h6q1WqIO&quot;&#125;</span><br><span class="line"># admin即为登录名;Xb-ZYP526wmg4_h6q1WqIO为登录密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;username&quot;</span><span class="punctuation">:</span><span class="string">&quot;admin&quot;</span><span class="punctuation">,</span><span class="attr">&quot;password&quot;</span><span class="punctuation">:</span><span class="string">&quot;&lt;your-password&gt;&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"># admin即为登录名;&lt;your-password&gt;为登录密码</span><br></pre></td></tr></table></figure>
+
 <p>输入此处记录的<code>username</code>及<code>password</code>，即可成功登陆qinglong面板，登陆后可以把密码修改成自己熟悉的。</p>
-<h2 id="3-拉取脚本"><a href="#3-拉取脚本" class="headerlink" title="3.拉取脚本"></a>3.拉取脚本</h2><p>可以直接ssh里拉取，方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ql repo https://github.com/xxx.git #拉取仓库</span><br><span class="line">ql raw https://raw.githubusercontent.com/xxx #拉取单个脚本</span><br></pre></td></tr></table></figure></p>
-<p>也可以登录面板点击右上角<code>添加定时</code>，方式如下：<br><img src="https://img.jackchen.cn/%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93.png" alt="添加拉取仓库"></p>
+<h2 id="3-拉取脚本"><a href="#3-拉取脚本" class="headerlink" title="3.拉取脚本"></a>3.拉取脚本</h2><p>可以直接ssh里拉取，方式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ql repo https://github.com/xxx.git #拉取仓库</span><br><span class="line">ql raw https://raw.githubusercontent.com/xxx #拉取单个脚本</span><br></pre></td></tr></table></figure>
+
+<p>也可以登录面板点击右上角<code>添加定时</code>，方式如下：</p>
+<p><img src="https://img.jackchen.cn/%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93.png" alt="添加拉取仓库"></p>
 <p>别忘记在面板界面左侧菜单中的<code>环境变量</code>中添加你自己的JD COOKIE</p>
 <p>名称一定要填写<code>JD_COOKIE</code>，值填写上一步复制的内容，备注可以填写这是谁的账号，可以添加多个账号，但名称都必须是<code>JD_COOKIE</code>。添加多个账号的另一个方法：集合在一个环境变量下，多个 cookie 用 &amp; 隔开。(获取不同账号cookie时，要用不同浏览器)</p>
 <p>添加了账号和脚本了，可以运行一个脚本试试。随便点击一个脚本右侧的运行，然后点击运行右侧的日志，查看运行情况：</p>
 <p>可以看到你绑定的京东账号已经识别了，已经开始执行脚本了，但是有些京东活动是需要去京东app手动开启活动的。这就需要你多关注这些执行日志，配合去app进行某些操作，才能最大化获取京豆。如果你想最大化获取京豆，可以在运行2天之后，进入日志中查看每个脚本的运行日志，看那些脚本需要你手动打开app中的某些服务，然后你配合操作就行，剩下的就交给脚本吧。</p>
-<p>ps:新手推荐使用Faker集合仓库，集合仓库内包含本文内所有作者可用脚本，并不断更新 →_→ <a href="https://www.notion.so/QL-pannel-Pull-GitHub-Repository-Code-da5099068a434e29920cdcb3e7af4410" target="_blank" rel="noopener"><code>查看大佬的库</code></a></p>
+<p>ps:新手推荐使用Faker集合仓库，集合仓库内包含本文内所有作者可用脚本，并不断更新 →_→ <a href="https://www.notion.so/QL-pannel-Pull-GitHub-Repository-Code-da5099068a434e29920cdcb3e7af4410"><code>查看大佬的库</code></a></p>
 <p>pss:如果在面板里拉库没反应的话可以把Docker重启下再看看，本人就是定时添加后一直不成功，研究了半天，几乎放弃的时候重启下Docker居然脚本都好了。。。</p>
 <h2 id="4-备份"><a href="#4-备份" class="headerlink" title="4.备份"></a>4.备份</h2><p>所有数据都将保存在<code>docker-compose.yml</code>所在的同级目录的<code>data</code>文件夹中，如需要备份，请直接备份<code>docker-compose.yml</code>及<code>data</code>文件夹即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@jack:/opt/qinglong# ls -lah</span><br><span class="line">总用量 8.0K</span><br><span class="line">drwxr-xr-x 3 root root 4.0K  8月 30 01:29 .</span><br><span class="line">drwxr-xr-x 4 root root 4.0K  8月 30 00:51 ..</span><br><span class="line">drwxr-xr-x 8 root root 4.0K  8月 30 01:30 data</span><br><span class="line">-rw-r--r-- 1 root root  386  8月 30 01:29 docker-compose.yml</span><br></pre></td></tr></table></figure>
-<h2 id="5-更新"><a href="#5-更新" class="headerlink" title="5.更新"></a>5.更新</h2><p>在面板执行”更新面板”任务即可<br><br>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd qinglong</span><br><span class="line">docker-compose down</span><br><span class="line">docker pull whyour/qinglong:latest</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@jack:/opt/qinglong# ls -lah</span><br><span class="line">总用量 8.0K</span><br><span class="line">drwxr-xr-x 3 root root 4.0K  8月 30 01:29 .</span><br><span class="line">drwxr-xr-x 4 root root 4.0K  8月 30 00:51 ..</span><br><span class="line">drwxr-xr-x 8 root root 4.0K  8月 30 01:30 data</span><br><span class="line">-rw-r--r-- 1 root root  386  8月 30 01:29 docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-更新"><a href="#5-更新" class="headerlink" title="5.更新"></a>5.更新</h2><p>在面板执行”更新面板”任务即可</p>
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd qinglong</span><br><span class="line">docker-compose down</span><br><span class="line">docker pull whyour/qinglong:latest</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
 <h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h2><p>现在你就阔以安心的让脚本帮你跑所有的程序来薅羊毛了😁 后期有时间再研究下扫码自动添加CK和如何在手机小组件上显示前一天的羊毛量 😁 👏🏻</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 参考文章:</span><br><span class="line">https://github.com/whyour/qinglong/blob/develop/INSTALL.md#安装方式1</span><br><span class="line">https://github.com/shufflewzc/faker2</span><br><span class="line">https://www.notion.so/QL-pannel-Pull-GitHub-Repository-Code-da5099068a434e29920cdcb3e7af4410</span><br><span class="line">https://v2raytech.com/jd-script-to-get-rich/</span><br><span class="line">https://blog.csdn.net/chinassj/article/details/119871281</span><br><span class="line">https://blog.csdn.net/xiaozhazhazhazha/article/details/119519247?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1.no_search_link&amp;spm=1001.2101.3001.4242</span><br><span class="line">https://blog.csdn.net/weixin_42565036/article/details/117569495</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 参考文章:</span><br><span class="line">https://github.com/whyour/qinglong/blob/develop/INSTALL.md#安装方式1</span><br><span class="line">https://github.com/shufflewzc/faker2</span><br><span class="line">https://www.notion.so/QL-pannel-Pull-GitHub-Repository-Code-da5099068a434e29920cdcb3e7af4410</span><br><span class="line">https://v2raytech.com/jd-script-to-get-rich/</span><br><span class="line">https://blog.csdn.net/chinassj/article/details/119871281</span><br><span class="line">https://blog.csdn.net/xiaozhazhazhazha/article/details/119519247?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1.no_search_link&amp;spm=1001.2101.3001.4242</span><br><span class="line">https://blog.csdn.net/weixin_42565036/article/details/117569495</span><br></pre></td></tr></table></figure>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Docker/" rel="tag"># Docker</a>
-          
-            <a href="/tags/qinglong/" rel="tag"># qinglong</a>
-          
-            <a href="/tags/京豆/" rel="tag"># 京豆</a>
-          
-            <a href="/tags/薅羊毛/" rel="tag"># 薅羊毛</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/09/03/2019-8-Docker bulid wordpress/" rel="next" title="在Docker上运行一个Wordpress网站">
-                <i class="fa fa-chevron-left"></i> 在Docker上运行一个Wordpress网站
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"># Docker</a>
+              <a href="/tags/qinglong/" rel="tag"># qinglong</a>
+              <a href="/tags/%E4%BA%AC%E8%B1%86/" rel="tag"># 京豆</a>
+              <a href="/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/" rel="tag"># 薅羊毛</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/03/2019-8-Docker%20bulid%20wordpress/" rel="prev" title="在Docker上运行一个wordpress网站">
+                  <i class="fa fa-angle-left"></i> 在Docker上运行一个wordpress网站
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-
-    <div class="post-spread">
-      
-        
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDI1Ny8xMDc5NA=="></div>
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Jackchen</p>
-              <p class="site-description motion-element" itemprop="description">让学习融入生活，让生活变得有趣！</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">11</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/jackchensky" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/jackchensky" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="http://weibo.com/jackchen" target="_blank" title="Weibo">
-                      
-                        <i class="fa fa-fw fa-Weibo"></i>Weibo</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.douban.com/people/jackchen" target="_blank" title="Douban">
-                      
-                        <i class="fa fa-fw fa-douban"></i>Douban</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/jackchen" target="_blank" title="Zhihu">
-                      
-                        <i class="fa fa-fw fa-Zhihu"></i>Zhihu</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://qingsucai.com/" title="轻素材" target="_blank">轻素材</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装配置青龙面板"><span class="nav-number">2.</span> <span class="nav-text">1.安装配置青龙面板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-登录"><span class="nav-number">3.</span> <span class="nav-text">2.登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-拉取脚本"><span class="nav-number">4.</span> <span class="nav-text">3.拉取脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-备份"><span class="nav-number">5.</span> <span class="nav-text">4.备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-更新"><span class="nav-number">6.</span> <span class="nav-text">5.更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-总结"><span class="nav-number">7.</span> <span class="nav-text">6.总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Jackchen</span>
-
-  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
 
-        
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC8zNDI1Ny8xMDc5NA=="></div>
+</div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Jackchen</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
+    </div>
+  </footer>
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script src="/js/third-party/comments/livere.js" defer></script>
 
 </body>
 </html>
