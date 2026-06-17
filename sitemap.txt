@@ -1,12 +1,13 @@
+https://me.jackchen.cn/2026/06/17/touchbar-codex-token-tech-diary/
 https://me.jackchen.cn/2021/10/02/2021-9-qinglong%20bulid/
 https://me.jackchen.cn/tags/index.html
-https://me.jackchen.cn/2016/09/22/hexo-error/
 https://me.jackchen.cn/2017/03/28/move-hexo-way/
+https://me.jackchen.cn/2016/09/22/hexo-error/
 https://me.jackchen.cn/2017/03/27/reset-terminal/
 https://me.jackchen.cn/2016/09/12/write-before/
 https://me.jackchen.cn/categories/index.html
-https://me.jackchen.cn/2019/08/26/2019-8-wp-data-connection-error/
 https://me.jackchen.cn/2019/09/03/2019-8-Docker%20bulid%20wordpress/
+https://me.jackchen.cn/2019/08/26/2019-8-wp-data-connection-error/
 https://me.jackchen.cn/2017/02/28/Java-first-stage/
 https://me.jackchen.cn/2016/09/12/build-hexo-on-github/
 https://me.jackchen.cn/2019/03/24/2019-3-wordpress-IP-Bug/
@@ -21,6 +22,9 @@ https://me.jackchen.cn/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/
 https://me.jackchen.cn/tags/Java/
 https://me.jackchen.cn/tags/Hexo/
 https://me.jackchen.cn/tags/MAC/
+https://me.jackchen.cn/tags/Codex/
+https://me.jackchen.cn/tags/Touch-Bar/
+https://me.jackchen.cn/tags/Swift/
 https://me.jackchen.cn/tags/%E5%AD%A6%E4%B9%A0/
 https://me.jackchen.cn/categories/wordpress/
 https://me.jackchen.cn/categories/Docker/

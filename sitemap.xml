@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://me.jackchen.cn/2026/06/17/touchbar-codex-token-tech-diary/</loc>
+    
+    <lastmod>2026-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://me.jackchen.cn/2021/10/02/2021-9-qinglong%20bulid/</loc>
     
     <lastmod>2026-06-13</lastmod>
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://me.jackchen.cn/2016/09/22/hexo-error/</loc>
+    <loc>https://me.jackchen.cn/2017/03/28/move-hexo-way/</loc>
     
     <lastmod>2021-02-24</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://me.jackchen.cn/2017/03/28/move-hexo-way/</loc>
+    <loc>https://me.jackchen.cn/2016/09/22/hexo-error/</loc>
     
     <lastmod>2021-02-24</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://me.jackchen.cn/2019/08/26/2019-8-wp-data-connection-error/</loc>
+    <loc>https://me.jackchen.cn/2019/09/03/2019-8-Docker%20bulid%20wordpress/</loc>
     
     <lastmod>2021-02-24</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://me.jackchen.cn/2019/09/03/2019-8-Docker%20bulid%20wordpress/</loc>
+    <loc>https://me.jackchen.cn/2019/08/26/2019-8-wp-data-connection-error/</loc>
     
     <lastmod>2021-02-24</lastmod>
     
@@ -121,7 +130,7 @@
 
   <url>
     <loc>https://me.jackchen.cn/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -129,70 +138,91 @@
   
   <url>
     <loc>https://me.jackchen.cn/tags/wordpress/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/Docker/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/qinglong/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/%E4%BA%AC%E8%B1%86/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/Java/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/Hexo/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/MAC/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.jackchen.cn/tags/Codex/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.jackchen.cn/tags/Touch-Bar/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.jackchen.cn/tags/Swift/</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -201,42 +231,42 @@
   
   <url>
     <loc>https://me.jackchen.cn/categories/wordpress/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/categories/Docker/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/categories/Java/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/categories/Hexo/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/categories/MAC/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://me.jackchen.cn/categories/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
