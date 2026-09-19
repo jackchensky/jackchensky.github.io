@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"me.jackchen.cn","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="本文记录一次真实折腾过程：NAS 内网里的 Calibre-Web，本地访问正常，手机 5G 也能打开域名端口，但 Kindle Oasis 3 上的 KOReader OPDS 怎么都访问不稳定。最后的稳定方案是：用 Cloudflare Tunnel 给 Calibre-Web 做一个 HTTPS 公网入口。  文中涉及的域名、邮箱、内网 IP、Tunnel ID 等都已脱敏，截图也做了局">
+    <meta name="description" content="本文记录一次真实折腾过程：NAS 内网里的 Calibre-Web，本地访问正常，手机 5G 也能打开域名端口，但 Kindle Oasis 3 上的 KOReader OPDS 怎么都访问不稳定。最后的稳定方案是：用 Cloudflare Tunnel 给 Calibre-Web 做一个 HTTPS 公网入口。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KOReader 无法通过 OPDS 访问 NAS 上的 Calibre-Web？我最后用 Cloudflare Tunnel 解决了">
 <meta property="og:url" content="https://me.jackchen.cn/2026/09/19/koreader-calibre-web-cloudflare-tunnel/index.html">
 <meta property="og:site_name" content="Jackchen Notebook">
-<meta property="og:description" content="本文记录一次真实折腾过程：NAS 内网里的 Calibre-Web，本地访问正常，手机 5G 也能打开域名端口，但 Kindle Oasis 3 上的 KOReader OPDS 怎么都访问不稳定。最后的稳定方案是：用 Cloudflare Tunnel 给 Calibre-Web 做一个 HTTPS 公网入口。  文中涉及的域名、邮箱、内网 IP、Tunnel ID 等都已脱敏，截图也做了局">
+<meta property="og:description" content="本文记录一次真实折腾过程：NAS 内网里的 Calibre-Web，本地访问正常，手机 5G 也能打开域名端口，但 Kindle Oasis 3 上的 KOReader OPDS 怎么都访问不稳定。最后的稳定方案是：用 Cloudflare Tunnel 给 Calibre-Web 做一个 HTTPS 公网入口。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://me.jackchen.cn/images/cloudflare-tunnel-koreader/koreader-cloudflare-tunnel-cover.jpg">
 <meta property="og:image" content="https://me.jackchen.cn/images/cloudflare-tunnel-koreader/01-review-dns-records-redacted.png">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://me.jackchen.cn/images/cloudflare-tunnel-koreader/05-tunnel-healthy-redacted.png">
 <meta property="og:image" content="https://me.jackchen.cn/images/cloudflare-tunnel-koreader/06-wrong-hostname-routes-page.png">
 <meta property="article:published_time" content="2026-09-19T08:19:06.000Z">
-<meta property="article:modified_time" content="2026-09-19T08:20:22.183Z">
+<meta property="article:modified_time" content="2026-09-19T08:26:51.824Z">
 <meta property="article:author" content="Jackchen">
 <meta property="article:tag" content="Calibre-Web">
 <meta property="article:tag" content="Cloudflare Tunnel">
@@ -285,7 +285,6 @@
 <blockquote>
 <p>本文记录一次真实折腾过程：NAS 内网里的 Calibre-Web，本地访问正常，手机 5G 也能打开域名端口，但 Kindle Oasis 3 上的 KOReader OPDS 怎么都访问不稳定。最后的稳定方案是：用 Cloudflare Tunnel 给 Calibre-Web 做一个 HTTPS 公网入口。</p>
 </blockquote>
-<p>文中涉及的域名、邮箱、内网 IP、Tunnel ID 等都已脱敏，截图也做了局部打码。</p>
 <span id="more"></span>
 
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>我在 NAS 上部署了 Calibre-Web，主要用来管理电子书，并通过 KOReader 自带的 OPDS 功能在 Kindle 上浏览和下载书籍。</p>
